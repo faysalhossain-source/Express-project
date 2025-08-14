@@ -1,15 +1,11 @@
 const express = require("express");
 const app = express();
-
+const userRoutes = require("./routes/user.routes");
 
 app.use(express.json());
+app.use("/users", userRoutes);
 
-
-const employeeRoutes = require("./routes/employeeRoutes");
-app.use("/routs", userRouts); // employees endpoint
-
-// Server start
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(` Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
 });
